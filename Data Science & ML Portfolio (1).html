@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradum Kumar | Data Science & AI Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: 'rgba(17, 24, 39, 0.7)',
+                        cyanGlow: '#06b6d4',
+                        purpleGlow: '#a855f7',
+                        blueGlow: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Glowing & Glassmorphism Styles */
+        body {
+            background-color: #080c14;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-btn:hover {
+            background: linear-gradient(135deg, #0891b2 0%, #4f46e5 100%);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="bg-darkBg font-sans relative">
+
+    <!-- Background Grid Effect -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+    <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-1/4 right-10 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-gray-800/80 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold font-mono tracking-wider text-cyan-400">
+                &lt;PK /&gt;<span class="text-gray-400 text-sm font-sans font-normal ml-2 hidden sm:inline">Data Science</span>
+            </a>
+            
+            <div class="flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- HERO SECTION -->
+        <section class="min-h-[85vh] flex flex-col justify-center items-start pt-12 pb-16">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                <span>Open for ML Internships & Opportunities</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4">
+                Hi, I'm <span class="gradient-text">PRADUM KUMAR</span>
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-gray-300 font-medium mb-4 max-w-3xl">
+                Aspiring Data Scientist & AI/ML Engineer
+            </p>
+
+            <p class="text-gray-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
+                Economics Student at <span class="text-gray-200 font-semibold">Veer Kunwar Singh University (VKSU)</span> leveraging analytical thinking to master <span class="text-cyan-400 font-mono">Machine Learning</span>, <span class="text-purple-400 font-mono">PCA</span>, and <span class="text-indigo-400 font-mono">Feature Engineering</span>.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 items-center">
+                <a href="#projects" class="gradient-btn text-white font-semibold px-6 py-3 rounded-xl flex items-center space-x-2 shadow-lg">
+                    <span>View Projects</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+                
+                <a href="#contact" class="glass-card hover:bg-gray-800 text-gray-200 font-semibold px-6 py-3 rounded-xl transition-all border border-gray-700">
+                    Contact Me
+                </a>
+
+                <div class="flex items-center space-x-3 ml-2">
+                    <a href="https://linkedin.com" target="_blank" class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="w-11 h-11 rounded-xl glass-card flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-500/40 transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-16 border-t border-gray-800/60">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-8 h-1 bg-cyan-500 rounded-full"></div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-wide">About Me</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 glass-card p-6 sm:p-8 rounded-2xl">
+                    <p class="text-gray-300 leading-relaxed mb-4 text-base sm:text-lg">
+                        I am currently pursuing my degree at <strong class="text-white">Veer Kunwar Singh University (Ara)</strong> with a strong background in <strong class="text-cyan-400">Economics</strong>. My academic background gives me a unique advantage in quantitative analysis, statistical modeling, and logical decision-making.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        I am passionate about converting raw data into meaningful insights. From understanding fundamental concepts like <span class="text-purple-300 font-mono">Curse of Dimensionality</span> and <span class="text-purple-300 font-mono">PCA</span> to coding regression models, I am actively building my skillset step-by-step to contribute to real-world AI applications.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-gray-800">
+                        <div>
+                            <span class="text-xs text-gray-500 font-mono uppercase">University</span>
+                            <p class="text-sm font-semibold text-gray-200">VKSU, Ara</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 font-mono uppercase">Focus Area</span>
+                            <p class="text-sm font-semibold text-gray-200">Data Science & ML</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 font-mono uppercase">Background</span>
+                            <p class="text-sm font-semibold text-gray-200">Economics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between border-l-4 border-l-cyan-500">
+                    <div>
+                        <i class="fa-solid fa-quote-left text-3xl text-cyan-500/40 mb-4"></i>
+                        <p class="text-gray-300 italic text-sm leading-relaxed mb-4">
+                            "Data is the raw material, but domain expertise and Machine Learning algorithms turn it into actionable intelligence."
+                        </p>
+                    </div>
+                    <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-bullseye text-cyan-400"></i>
+                            <span class="text-xs font-mono text-gray-300">Targeting AI/ML Internships 2024-2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-16 border-t border-gray-800/60">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-8 h-1 bg-purple-500 rounded-full"></div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-wide">Technical Skills</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Category 1 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                            <i class="fa-solid fa-code text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Programming & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-gray-700/60 text-gray-300 text-sm font-mono flex items-center gap-2">
+                            <i class="fa-brands fa-python text-yellow-400"></i> Python
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-gray-700/60 text-gray-300 text-sm font-mono flex items-center gap-2">
+                            <i class="fa-solid fa-database text-blue-400"></i> SQL
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-gray-700/60 text-gray-300 text-sm font-mono flex items-center gap-2">
+                            <i class="fa-brands fa-git-alt text-orange-500"></i> Git & GitHub
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-gray-700/60 text-gray-300 text-sm font-mono flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-green-400"></i> VS Code
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-gray-700/60 text-gray-300 text-sm font-mono flex items-center gap-2">
+                            <i class="fa-solid fa-book text-orange-400"></i> Jupyter / Google Colab
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">ML & Data Science Concepts</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            Scikit-Learn
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            Pandas & NumPy
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            PCA (Dimensionality Reduction)
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            Linear Regression ($R^2$ / COD)
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            Feature Construction
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-gray-900/80 border border-purple-500/30 text-purple-300 text-sm font-mono">
+                            Matplotlib / Seaborn
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-16 border-t border-gray-800/60">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-1 bg-cyan-500 rounded-full"></div>
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-wide">Featured Projects</h2>
+                </div>
+                <span class="text-xs font-mono text-gray-400">Updating regularly</span>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-bl-full pointer-events-none"></div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span> In Progress
+                            </span>
+                            <i class="fa-solid fa-chart-line text-cyan-400 text-xl"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                            House Price Prediction
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Implementation of Linear Regression to predict housing prices. Evaluating accuracy using Coefficient of Determination ($R^2$).
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">Python</span>
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">Scikit-Learn</span>
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">Pandas</span>
+                        </div>
+
+                        <button onclick="openModal('project1')" class="w-full py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-sm font-medium transition-all flex items-center justify-center space-x-2">
+                            <span>Details & Code</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                                Upcoming
+                            </span>
+                            <i class="fa-solid fa-layer-group text-purple-400 text-xl"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                            PCA Dimensionality Reduction
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Overcoming the Curse of Dimensionality by extracting Principal Components from high-dimensional datasets.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">PCA</span>
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">Matplotlib</span>
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">NumPy</span>
+                        </div>
+
+                        <button onclick="openModal('project2')" class="w-full py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-sm font-medium transition-all flex items-center justify-center space-x-2">
+                            <span>Details</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                                Planned
+                            </span>
+                            <i class="fa-solid fa-[#06b6d4] fa-wand-magic-sparkles text-indigo-400 text-xl"></i>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                            Feature Construction Pipeline
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            Constructing financial ratios (e.g., Debt-to-Income) and aggregated metrics from raw dataset features to improve model performance.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">EDA</span>
+                            <span class="text-[11px] font-mono bg-gray-900 px-2 py-0.5 rounded text-gray-400">Feature Engineering</span>
+                        </div>
+
+                        <button onclick="openModal('project3')" class="w-full py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 text-sm font-medium transition-all flex items-center justify-center space-x-2">
+                            <span>Details</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 border-t border-gray-800/60">
+            <div class="glass-card p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-extrabold text-white mb-4">Let's Connect & Collaborate!</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Whether it's discussing Machine Learning algorithms, Google Ambassador community initiatives, or potential internship roles, feel free to reach out.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <a href="mailto:contact@pradumkumar.com" class="gradient-btn text-white font-medium px-6 py-3 rounded-xl flex items-center space-x-2">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Send Email</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-xl border border-gray-700 transition-all flex items-center space-x-2">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-8 text-center text-xs font-mono text-gray-500 border-t border-gray-800/40">
+            <p>© 2024 PRADUM KUMAR. Built for Machine Learning & Data Science Portfolio.</p>
+        </footer>
+
+    </div>
+
+    <!-- PROJECT MODAL -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-6 relative border border-gray-700">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div id="modalContent">
+                <!-- Dynamic Content inserted via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        const projectData = {
+            project1: {
+                title: "House Price Prediction (Linear Regression)",
+                status: "In Progress",
+                description: "This project focuses on building a simple Linear Regression model using Scikit-Learn to predict real estate prices based on area, rooms, and location features. The model's performance is measured using $R^2$ (Coefficient of Determination).",
+                tech: ["Python", "Scikit-Learn", "Pandas", "Matplotlib"],
+                codeSnippet: "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\nr2_score = model.score(X_test, y_test)"
+            },
+            project2: {
+                title: "PCA Dimensionality Reduction",
+                status: "Planned",
+                description: "Addressing the Curse of Dimensionality by transforming 50+ correlated features down to top 2-3 Principal Components while retaining over 90% of variance.",
+                tech: ["Python", "PCA", "Scikit-Learn", "Seaborn"],
+                codeSnippet: "from sklearn.decomposition import PCA\npca = PCA(n_components=2)\nX_pca = pca.fit_transform(X_scaled)"
+            },
+            project3: {
+                title: "Feature Construction Pipeline",
+                status: "Planned",
+                description: "Using Economics domain knowledge to construct new ratios (e.g. Debt-to-Income) and mathematical transformations to improve model predictability.",
+                tech: ["Pandas", "NumPy", "Feature Engineering"],
+                codeSnippet: "df['Debt_Income_Ratio'] = df['Total_Debt'] / df['Total_Income']"
+            }
+        };
+
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            const modal = document.getElementById('projectModal');
+            const content = document.getElementById('modalContent');
+
+            content.innerHTML = `
+                <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block mb-1">${data.status}</span>
+                <h3 class="text-2xl font-bold text-white mb-3">${data.title}</h3>
+                <p class="text-gray-300 text-sm mb-4 leading-relaxed">${data.description}</p>
+
+                <div class="mb-4">
+                    <span class="text-xs text-gray-400 font-mono block mb-2">TECH STACK:</span>
+                    <div class="flex flex-wrap gap-2">
+                        ${data.tech.map(t => `<span class="bg-gray-800 text-cyan-300 text-xs font-mono px-2.5 py-1 rounded border border-gray-700">${t}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <span class="text-xs text-gray-400 font-mono block mb-2">CODE SNIPPET:</span>
+                    <pre class="bg-gray-950 p-3 rounded-lg text-xs font-mono text-green-400 overflow-x-auto border border-gray-800">${data.codeSnippet}</pre>
+                </div>
+
+                <button onclick="closeModal()" class="w-full py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-sm font-semibold transition-all">Close</button>
+            `;
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
